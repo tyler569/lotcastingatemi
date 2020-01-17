@@ -140,6 +140,13 @@ export interface Character extends PlayerAsset, WithSharedStats {
   excellency: string
   excellency_stunt: string
   excellencies_for: string[]
+  base_pool_overrides: {
+    [x in BasePools]: {
+      attribute?: Attribute
+      ability?: Ability
+    }
+  }
+
   charms: number[]
   martial_arts_charms: number[]
   evocations: number[]
@@ -161,3 +168,18 @@ export interface Specialty {
   ability: Ability
   context: string
 }
+
+export type BasePools =
+  | 'evasion'
+  | 'resolve'
+  | 'guile'
+  | 'soak'
+  | 'join_battle'
+  | 'rush'
+  | 'disengage'
+  | 'withdraw'
+  | 'rise_from_prone'
+  | 'take_cover'
+  | 'read_intentions'
+  | 'shape_sorcery'
+  | 'feat_of_strength'
