@@ -1,44 +1,9 @@
+import { ABILITIES, ATTRIBUTES } from '../utils/tsconstants'
 import { PlayerAsset, Weight } from './_lib'
 import { WithSharedStats } from './shared'
 
-export type Ability =
-  | 'archery'
-  | 'athletics'
-  | 'awareness'
-  | 'brawl'
-  | 'bureaucracy'
-  | 'craft'
-  | 'dodge'
-  | 'integrity'
-  | 'investigation'
-  | 'larceny'
-  | 'linguistics'
-  | 'lore'
-  | 'martial_arts'
-  | 'medicine'
-  | 'melee'
-  | 'occult'
-  | 'performance'
-  | 'presence'
-  | 'resistance'
-  | 'ride'
-  | 'sail'
-  | 'socialize'
-  | 'stealth'
-  | 'survival'
-  | 'thrown'
-  | 'war'
-
-export type Attribute =
-  | 'strength'
-  | 'dexterity'
-  | 'stamina'
-  | 'charisma'
-  | 'manipulation'
-  | 'appearance'
-  | 'perception'
-  | 'intelligence'
-  | 'wits'
+export type Ability = typeof ABILITIES[number]
+export type Attribute = typeof ATTRIBUTES[number]
 
 export interface XpLogEntry {
   label: string
@@ -133,7 +98,7 @@ export interface Character extends PlayerAsset, WithSharedStats {
   xp_craft_silver: number
   xp_craft_gold: number
   xp_craft_white: number
-  anima_powers: any[]
+  anima_powers: void
   limit_trigger: string
   limit: number
 
@@ -141,10 +106,7 @@ export interface Character extends PlayerAsset, WithSharedStats {
   excellency_stunt: string
   excellencies_for: string[]
   base_pool_overrides: {
-    [x in BasePools]: {
-      attribute?: Attribute
-      ability?: Ability
-    }
+    [x in BasePools]: PoolOverrideEntry
   }
 
   charms: number[]
@@ -183,3 +145,8 @@ export type BasePools =
   | 'read_intentions'
   | 'shape_sorcery'
   | 'feat_of_strength'
+
+export interface PoolOverrideEntry {
+  attribute?: Attribute
+  ability?: Ability
+}

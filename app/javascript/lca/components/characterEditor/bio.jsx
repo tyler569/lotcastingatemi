@@ -195,8 +195,5 @@ const mapStateToProps = (state, props) => ({
 
 export default compose(
   ProtectedComponent,
-  connect(
-    mapStateToProps,
-    { updateCharacter }
-  )
+  connect(mapStateToProps, { updateCharacter })
 )(BioEditor)

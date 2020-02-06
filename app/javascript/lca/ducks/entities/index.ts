@@ -42,11 +42,11 @@ import WeaponReducer from './weapon'
 
 // tslint:disable object-literal-sort-keys
 export const defaultState: EntityState = {
-  currentPlayer: 0,
+  currentPlayer: '0',
   players: {
     [0]: {
       id: 0,
-      name: 'Anonymous Player',
+      display_name: 'Anonymous Player',
       chronicles: [],
       own_chronicles: [],
       characters: [],

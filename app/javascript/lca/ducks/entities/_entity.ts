@@ -9,7 +9,7 @@ import {
   optimisticTypes,
   reducerUpdateAction,
   standardTypes,
-  unwrapped
+  unwrapped,
 } from './_lib'
 import { EntityState } from './_types'
 
@@ -111,7 +111,7 @@ export const createDuplicateAction = (type: eTypes): AIdAction => id => {
   })
 }
 
-type AUpdate = (id: number, trait: object) => AApiAction
+type AUpdate = (id: number | string, trait: object) => AApiAction
 let nextTransactionId = 0
 export const createUpdateAction = (type: eTypes): AUpdate => (id, trait) => {
   const transactionId = type + nextTransactionId++

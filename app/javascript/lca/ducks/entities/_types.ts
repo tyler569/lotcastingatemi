@@ -11,21 +11,21 @@ import {
 import { Player } from './player'
 
 export interface EntityState {
-  currentPlayer: number
-  players: { [id: number]: Player }
-  chronicles: { [id: number]: any }
-  characters: { [id: number]: Character }
-  weapons: { [id: number]: Weapon }
-  merits: { [id: number]: Merit }
-  charms: { [id: number]: Charm }
-  spells: { [id: number]: Spell }
-  qcs: { [id: number]: QC }
-  qc_merits: { [id: number]: any }
-  qc_charms: { [id: number]: any }
-  qc_attacks: { [id: number]: any }
-  battlegroups: { [id: number]: Battlegroup }
-  combat_actors: { [id: number]: any }
-  poisons: { [id: number]: Poison }
+  currentPlayer: string
+  players: { [id: string]: Player }
+  chronicles: { [id: string]: any }
+  characters: { [id: string]: Character }
+  weapons: { [id: string]: Weapon }
+  merits: { [id: string]: Merit }
+  charms: { [id: string]: Charm }
+  spells: { [id: string]: Spell }
+  qcs: { [id: string]: QC }
+  qc_merits: { [id: string]: any }
+  qc_charms: { [id: string]: any }
+  qc_attacks: { [id: string]: any }
+  battlegroups: { [id: string]: Battlegroup }
+  combat_actors: { [id: string]: any }
+  poisons: { [id: string]: Poison }
 }
 
 export interface WrappedEntityState {
